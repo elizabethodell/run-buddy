@@ -17,6 +17,14 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    position: -webkit-sticky;
+    position: sticky; /*makes the header always stick to the top */
+    top: 0;
+    background-image: url("../images/flipped-hero-image.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 80%;
+
   }
   
   header h1 {
@@ -24,6 +32,7 @@
     font-size: 36px;
     color: #fce138;
     margin: 0;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
   
   header a {
@@ -41,6 +50,7 @@
     justify-content: space-between;
     align-items: center;
     list-style: none;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
   
   header nav ul li a {
@@ -98,9 +108,10 @@
     border-color: #024e76;
     width: 40%;
     margin: 3.5%;
-    
+    box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
   }
-
+  
   .hero-cta {
     line-height: 1.2;
   }
@@ -109,6 +120,7 @@
     font-style: italic;
     font-size: 55px;
     color: #fce138;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
 /* hero form style end*/
 
@@ -130,6 +142,13 @@
   color: #024e76;
   width: 100%;
   margin-bottom: 15px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 1)
+}
+
+.form-input:focus {
+  background-color: rgba(255,255,255, 1);
+  outline: none;
 }
 
 /* Adding some horizontal spacing for the <label> element in the radio button elements*/
@@ -143,6 +162,7 @@
   border: none;
   padding: 10px 20px;
   font-size: 16px;
+  border-radius: 10px;
 }
 
 /* Hero Style End */
@@ -184,6 +204,15 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.step:last-child {
+  border-bottom: 1px solid #39a6b2;
+}
+
+.step:last-child {
+  border-bottom: none;
+}
+
 .steps {
   background: #fce138;
 }
@@ -344,6 +373,13 @@
   width: 100%;
   margin-bottom: 15px;
   margin-top: 5px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 1)
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+  background-color: rgba(255, 255, 255, 1);
+  outline: none;
 }
 
 .contact-form button {
@@ -354,14 +390,55 @@
   text-align: center;
   padding: 15px 0;
   font-size: 16px;
+  border-radius: 10px;
 }
 /* Reach out styles end */
 
 .flex-row {
   display:flex;
-
-
 }
+
+.some-class {
+  text-shadow: 5px 10px 15px black;
+  box-shadow: 5px 10px 15px black rgba(0, 0, 0, 0.25);
+}
+
+/* default state */
+button {
+  background: white;
+}
+
+/* mouse is hovering over button */
+button:hover {
+  background: red;
+}
+
+/* button is in focus because it was the most recently clicked element on the page */
+button:focus {
+  background: green;
+}
+
+/* user is actively pressing the cursor down on the button */
+button:active {
+  background: blue;
+}
+
+header nav ul li a:hover {
+  background: #fce138;
+  color: #024e76;
+  border-radius: 15px;
+  text-shadow: none;
+}
+
+.hero-form button:hover {
+  background-color: #39a6b2;  
+}
+
+.contact-form button:hover {
+  color: #fce138;
+  background: #39a6b2;
+}
+
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
   header {
@@ -410,6 +487,10 @@
   }
   
   @media screen and (max-width: 768px) {
+
+  header {
+    position: relative;
+  }
 
   section {
     padding: 30px 15px;
